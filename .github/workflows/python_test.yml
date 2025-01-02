@@ -1,0 +1,30 @@
+name: Run Tests
+
+# Configura el evento que disparará el workflow
+on:
+  push:
+    branches:
+      - main  # O tu rama principal (main o master)
+  pull_request:
+    branches:
+      - main  # O tu rama principal (main o master)
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Usar Ubuntu como sistema operativo para ejecutar los tests
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Checkout del repositorio para que los tests puedan acceder al código
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'  # Cambia la versión de Python según la que uses en tu proyecto
+
+      - name: Install dependencies
+        run: |
+          python -m venv virtualenv
+          source virtualenv/bin/activate  
+          pip install --upgrade pip
+          pip install -r requirements.txt  

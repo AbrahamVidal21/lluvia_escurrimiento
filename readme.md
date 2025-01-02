@@ -1,3 +1,6 @@
+![Python CI](https://github.com/AbrahamVidal21/lluvia_escurrimiento/actions/workflows/python_test.yml/badge.svg)
+
+
 # Análisis de Lluvia y Escurrimiento
 
 Este script realiza cálculos de escurrimientos y diseño hidráulico usando los métodos de Horton, Método Racional y Método de HUT. Los resultados se exportan a un archivo Excel.
